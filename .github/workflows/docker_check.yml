@@ -23,7 +23,7 @@ jobs:
         run: docker build -t YasminMichels/devops-satc:0.0.1 .
 
       - name: Push Docker image 
-        run: docker push YasminMichels/devops-satc:0.0.1
+        run: docker push yasminmichels/devops-satc:0.0.1
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
