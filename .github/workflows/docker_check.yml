@@ -21,3 +21,13 @@ jobs:
 
       - name: build 
         run: docker build -t YasminMichels/devops-satc:0.0.1 .
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.projectKey=YasminMichels_devops-satc \
+            -Dsonar.organization=yasminmichels
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.sources=.
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
