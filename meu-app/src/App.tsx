@@ -65,7 +65,6 @@ const App: React.FC = () => {
 
   return (
     <div style={styles.container}>
-      {/* Import de fonte externa direto no componente para facilitar o deploy */}
       <style>
         {`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');`}
       </style>
@@ -97,6 +96,8 @@ const App: React.FC = () => {
           onClick={() => setActive(!active)}
           onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
           onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          onFocus={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+          onBlur={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
           {active ? "DESLIGAR CHAMADA" : "ATENDER TELEFONE"}
         </button>
